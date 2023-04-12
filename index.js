@@ -42,7 +42,7 @@ function createFile(fileName, data) {
 function init() {
   inquirer.prompt(userPrompts).then((userResponses) => {
     console.log(userResponses);
-    const svgFile = `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    const svgFile = `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
     <circle cx="50" cy="50" r="45" fill="#FFA500" />
   <text x="50" y="55" fill="#ffffff" text-anchor="middle">Sample Text</text>
 </svg>
