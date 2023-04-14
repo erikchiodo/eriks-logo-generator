@@ -41,7 +41,7 @@ This command line app prompts information and generates personalized logo based 
 
 ## Installation
 
-npm (inquirer), node
+npm (inquirer,fs), node
 
 ## Usage
 
