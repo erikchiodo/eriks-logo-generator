@@ -27,6 +27,6 @@ class CircleSVG extends svgAttributes {
   }
 }
 
-CircleSVG.render();
+console.log(CircleSVG.render());
 
 module.exports = svgAttributes;
