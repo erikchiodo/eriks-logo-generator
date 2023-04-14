@@ -4,7 +4,7 @@
 
 ## Description
 
-This command line app prompts information and generates personalized logo based on user inputs
+This command line app prompts information and generates personalized logo based on user inputs.
 
 ## Table of Contents
 
