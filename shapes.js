@@ -17,7 +17,6 @@ console.log(svgInstance.shapeColor);
 class CircleSVG extends svgAttributes {
   constructor(text, textColor, shape, shapeColor) {
     super(text, textColor, shape, shapeColor);
-    svgRender = "";
   }
   render() {
     return `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
@@ -27,6 +26,7 @@ class CircleSVG extends svgAttributes {
   }
 }
 
-console.log(CircleSVG.render());
+const newCircle = new CircleSVG();
+console.log(newCircle.render());
 
 module.exports = svgAttributes;
