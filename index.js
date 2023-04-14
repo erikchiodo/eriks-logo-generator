@@ -1,7 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const path = require("path");
-const shapes = require("shapes.js");
+const { CircleSVG, TriangleSVG, SquareSVG } = require("./assets/shapes.js");
 
 const userPrompts = [
   {
@@ -11,7 +11,7 @@ const userPrompts = [
   },
   {
     type: "input",
-    name: "text-color",
+    name: "textColor",
     message: "What text color would you like? (enter keyword or hexadecimal): ",
   },
 
@@ -19,11 +19,11 @@ const userPrompts = [
     type: "list",
     name: "shape",
     message: "What shape would you like the logo to be?",
-    choices: ["circle", "square", "trangle"],
+    choices: ["circle", "square", "triangle"],
   },
   {
     type: "input",
-    name: "shape-color",
+    name: "shapeColor",
     message:
       "What shape color would you like? (enter keyword or hexadecimal): ",
   },
@@ -40,28 +40,50 @@ function createFile(fileName, data) {
   }
 }
 
-function init() {
-  inquirer.prompt(userPrompts).then((userResponses) => {
-    console.log(userResponses);
-    const circleFile = `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="150" cy="100" r= "100" fill="green" />
-  <text x="150" y="115" font-size="60" fill="#ffffff" text-anchor="middle">EAC</text>
-</svg>
-`;
-    const triangleFile = `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
-    <polygon points="30,200 150,10 270,200" fill="pink" />
-  <text x="150" y="160" font-size="60" fill="#ffffff" text-anchor="middle">EAC</text>
-</svg>
-`;
-    const squareFile = `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
-    <rect x="50" height="200" width= "200" fill="blue" />
-  <text x="150" y="120" font-size="60" fill="#ffffff" text-anchor="middle">EAC</text>
-</svg>
-`;
-    createFile("circle.svg", circleFile);
-    createFile("triangle.svg", triangleFile);
-    createFile("square.svg", squareFile);
-  });
+async function init() {
+  const response = await inquirer.prompt(userPrompts);
+  console.log(response);
+
+  // Create Logic to create SVG based on shape selected
+  if (response.shape === "circle") {
+    console.log("Circle Selected");
+    let circleSVG = new CircleSVG(
+      response.text,
+      response.textColor,
+      response.shape,
+      response.shapeColor
+    );
+    let renderedSVG = circleSVG.render();
+    console.log(renderedSVG);
+    fs.writeFileSync("./distri/logo.svg", renderedSVG);
+    console.log("Circle File Created");
+  } else if (response.shape === "triangle") {
+    let triangleSVG = new TriangleSVG(
+      response.text,
+      response.textColor,
+      response.shape,
+      response.shapeColor
+    );
+    let renderedSVG = triangleSVG.render();
+    fs.writeFileSync("./distri/logo.svg", renderedSVG);
+    console.log("Triangle File Created");
+  } else if (response.shape === "square") {
+    console.log("Square Selected");
+    let squareSVG = new SquareSVG(
+      response.text,
+      response.textColor,
+      response.shape,
+      response.shapeColor
+    );
+    let renderedSVG = squareSVG.render();
+    console.log(renderedSVG);
+    fs.writeFileSync("./distri/logo.svg", renderedSVG);
+    console.log("Square File Created");
+  } else {
+    console.log(
+      "Error: Please pick shape. Re-run node index.js and follow prompts again"
+    );
+  }
 }
 
 init();
