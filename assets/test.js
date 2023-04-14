@@ -21,23 +21,25 @@ describe("Circle", () => {
 });
 // Square Shape
 describe("Square", () => {
-  let testSquare = new SquareSVG();
-  let text = "EAC";
-  let textColor = "YELLOW";
-  let shape = "square";
-  shapeColor = "BLUE";
-  testSquare.render(text, textColor, shape, shapeColor);
-  expect(testSquare.render()).toEqual(
-    `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+  test("Renders Square SVG Content Successfully", () => {
+    let testSquare = new SquareSVG();
+    let text = "EAC";
+    let textColor = "YELLOW";
+    let shape = "square";
+    shapeColor = "BLUE";
+    testSquare.render(text, textColor, shape, shapeColor);
+    expect(testSquare.render()).toEqual(
+      `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
     <rect x="50" height="200" width= "200" fill="${this.shapeColor}" />
   <text x="150" y="120" font-size="60" fill="${this.textColor}" text-anchor="middle">${this.text}</text>
 </svg>
 `
-  );
+    );
+  });
 });
 // Triangle Shape
 describe("Triangle", () => {
-  test("renders correctly", () => {
+  test("Renders Triangle SVG Content Successfully", () => {
     let testTriangle = new TriangleSVG();
     let text = "EAC";
     let textColor = "YELLOW";
