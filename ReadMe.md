@@ -1,6 +1,22 @@
-To add details later
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/mit)
 
-TODOS:
+# Erik’s Logo Generator
+
+## Description
+
+This command line app prompts information and generates personalized logo based on user inputs
+
+## Table of Contents
+
+- [Story](#story)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
+
+## Story
 
 > GIVEN a command-line application that accepts user input
 
@@ -22,3 +38,33 @@ TODOS:
 
 > WHEN I open the `logo.svg` file in a browser
 > THEN I am shown a 300x200 pixel image that matches the criteria I entered
+
+## Installation
+
+npm (inquirer), node
+
+## Usage
+
+Run “node index.js” in command line. User will be prompted with a few questions. After user answers all prompt questions, logo.svg file will be generated and available in distri folder.
+
+Note: If you enter a null value or more than 3 characters, an error will be produced. If you re-run the prompt it will replace any logo.svg that had been previously created.
+
+## License
+
+Erik's-Logo-Generator is licensed under [MIT](https://opensource.org/licenses/mit).
+
+## Contributing
+
+No contributors (aside from author)
+
+## Tests
+
+Follow instructions in Usage. Make sure to clone repo from my Github (see link to GitHub below)!
+
+## Questions
+
+Link to [Logo Generator Project](https://github.com/erikchiodo/eriks-logo-generator)
+
+If you need to contact me directly, here's my email: erikchiodo@gmail.com!
+
+To add details later
