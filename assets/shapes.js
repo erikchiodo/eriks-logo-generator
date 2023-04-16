@@ -9,7 +9,7 @@ class svgAttributes {
 // Class that renders Circle SVG File
 class CircleSVG extends svgAttributes {
   constructor(text, textColor, shapeColor) {
-    super(text, textColor, shape, shapeColor);
+    super(text, textColor, shapeColor);
   }
   render() {
     return `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">

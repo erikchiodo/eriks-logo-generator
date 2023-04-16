@@ -60,7 +60,6 @@ async function init() {
     let circleSVG = new CircleSVG(
       response.text,
       response.textColor,
-      response.shape,
       response.shapeColor
     );
     let renderedSVG = circleSVG.render();
@@ -71,7 +70,6 @@ async function init() {
     let triangleSVG = new TriangleSVG(
       response.text,
       response.textColor,
-      response.shape,
       response.shapeColor
     );
     let renderedSVG = triangleSVG.render();
@@ -83,7 +81,6 @@ async function init() {
     let squareSVG = new SquareSVG(
       response.text,
       response.textColor,
-      response.shape,
       response.shapeColor
     );
     let renderedSVG = squareSVG.render();
