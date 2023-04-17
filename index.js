@@ -1,7 +1,12 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const path = require("path");
-const { CircleSVG, TriangleSVG, SquareSVG } = require("./assets/shapes.js");
+const {
+  SvgAttributes,
+  CircleSVG,
+  TriangleSVG,
+  SquareSVG,
+} = require("./assets/shapes.js");
 
 const userPrompts = [
   {
@@ -57,33 +62,40 @@ async function init() {
   // Logic to Create Circle File
   if (response.shape === "circle") {
     console.log("Circle Selected");
-    let circleSVG = new CircleSVG(
+    let renderCircle = new CircleSVG(response.shapeColor);
+    let shape = renderCircle.renderShape();
+    let renderShape = new SvgAttributes(
       response.text,
       response.textColor,
-      response.shapeColor
+      shape
     );
-    let renderedSVG = circleSVG.render();
+    let renderedSVG = renderShape.render();
+    console.log(renderedSVG);
     createFile("logo.svg", renderedSVG);
 
     // Logic to Create Triangle File
   } else if (response.shape === "triangle") {
-    let triangleSVG = new TriangleSVG(
+    let renderTriangle = new TriangleSVG(response.shapeColor);
+    let shape = renderTriangle.renderShape();
+    let renderShape = new SvgAttributes(
       response.text,
       response.textColor,
-      response.shapeColor
+      shape
     );
-    let renderedSVG = triangleSVG.render();
+    let renderedSVG = renderShape.render();
     createFile("logo.svg", renderedSVG);
 
     // Logic to Create Square File
   } else if (response.shape === "square") {
     console.log("Square Selected");
-    let squareSVG = new SquareSVG(
+    let renderSquare = new SquareSVG(response.shapeColor);
+    let shape = renderSquare.renderShape();
+    let renderShape = new SvgAttributes(
       response.text,
       response.textColor,
-      response.shapeColor
+      shape
     );
-    let renderedSVG = squareSVG.render();
+    let renderedSVG = renderShape.render();
     createFile("logo.svg", renderedSVG);
   } else {
     console.log(
