@@ -41,7 +41,7 @@ This command line app prompts information and generates personalized logo based 
 
 ## Installation
 
-npm (inquirer,fs), node
+npm (inquirer,fs), node, jest
 
 ## Usage
 
@@ -59,7 +59,7 @@ No contributors (aside from author)
 
 ## Tests
 
-Follow instructions in Usage. Make sure to clone repo from my Github (see link to GitHub below)!
+Used Jest to create tests (see test.js in assets folder for more information). Created 3 tests to confirm successful creation of shape!
 
 ## Questions
 
