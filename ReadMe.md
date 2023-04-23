@@ -65,7 +65,7 @@ Used Jest to create tests (see test.js in assets folder for more information). C
 
 Link to [Logo Generator Project](https://github.com/erikchiodo/eriks-logo-generator)
 
-Link to [Walkthrough Demo] (https://drive.google.com/file/d/1d2syYjoTuePxYAIBa-C_OMPreRxbRIfQ/view)
+Link to [Walkthrough Demo](https://drive.google.com/file/d/1d2syYjoTuePxYAIBa-C_OMPreRxbRIfQ/view)
 
 If you need to contact me directly, here's my email: erikchiodo@gmail.com!
 
